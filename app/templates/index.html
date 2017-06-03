@@ -10,6 +10,14 @@
     </a>
     <h1>Сокращение ссылок</h1>
     <p>Полностью работающее приложение по сокращению ссылок в интернете</p>
+      {% if not url %}
+      <form action="." method="post" >{% csrf_token %}
+          {{ form.as_p }}
+          <input id="submit_btn" type="submit" name="submit" value="Подвердить"/>
+      </form>
+      {% else %}
+          <a href="{{url}}">{{ url }}</a>
+      {% endif %}
   </div>
 </div>
 
