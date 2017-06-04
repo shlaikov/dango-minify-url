@@ -1,6 +1,7 @@
 import os
 import dj_database_url
 
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -37,7 +38,7 @@ TEMPLATES = [
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
-            'debug': True,
+            'debug': os.environ['DEBUG'],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
