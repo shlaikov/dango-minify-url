@@ -2,11 +2,11 @@ from django.db import IntegrityError
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import get_object_or_404
 
 from .models import Greeting
-from .forms import UrlForm
 from .models import ShortUrl, Hit
+from .forms import UrlForm
 
 
 def index(request):
@@ -23,6 +23,7 @@ def index(request):
 
 def redirect(request, key):
     target = get_object_or_404(ShortUrl, key=key)
+
     try:
         hit = Hit()
         hit.target = target

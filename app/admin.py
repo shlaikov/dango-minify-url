@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-
-from .models  import ShortUrl, Hit
+from .models import ShortUrl, Hit
 
 
 class ShortUrlAdmin(admin.ModelAdmin):
@@ -10,6 +9,7 @@ class ShortUrlAdmin(admin.ModelAdmin):
     ordering = ('-added',)
     list_filter = ('added',)
     date_hierarchy = 'added'
+
 admin.site.register(ShortUrl, ShortUrlAdmin)
 
 
@@ -18,4 +18,5 @@ class HitAdmin(admin.ModelAdmin):
     ordering = ('-time',)
     list_filter = ('target', 'referer', 'time')
     date_hierarchy = 'time'
+
 admin.site.register(Hit, HitAdmin)
