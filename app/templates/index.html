@@ -16,7 +16,9 @@
           <input id="submit_btn" type="submit" name="submit" value="Подвердить"/>
       </form>
       {% else %}
-          <a href="{{url}}">{{ url }}</a>
+          <div class="card-panel">
+              <a href="{{url}}">{{ url }}</a>
+          </div>
       {% endif %}
   </div>
 </div>

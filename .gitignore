@@ -3,3 +3,5 @@ virtenv
 staticfiles
 .env
 db.sqlite3
+.idea
+app/migrations
