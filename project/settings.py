@@ -62,7 +62,8 @@ if DEBUG:
     }
 else:
     ALLOWED_HOSTS = ['https://django-minify-url.herokuapp.com/']
-    DATABASES['default'] = dj_database_url.config()
+    db_from_env = dj_database_url.config(conn_max_age=250)
+    DATABASES['default'].update(db_from_env)
 
 
 AUTH_PASSWORD_VALIDATORS = [
