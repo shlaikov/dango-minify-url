@@ -2,6 +2,7 @@ import os
 import dj_database_url
 
 
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -62,6 +63,7 @@ if DEBUG:
 else:
     ALLOWED_HOSTS = ['https://django-minify-url.herokuapp.com/']
     DATABASES['default'] = dj_database_url.config()
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
