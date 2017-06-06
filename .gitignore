@@ -1,6 +1,7 @@
 virtenv
 *.pyc
 staticfiles
+app/migrations
 .env
 db.sqlite3
 .idea
