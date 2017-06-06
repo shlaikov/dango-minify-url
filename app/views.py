@@ -1,6 +1,5 @@
 from django.db import IntegrityError
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 
