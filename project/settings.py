@@ -52,19 +52,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-if DEBUG:
-    ALLOWED_HOSTS = ['*']
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-else:
-    ALLOWED_HOSTS = ['https://django-minify-url.herokuapp.com/']
-    db_from_env = dj_database_url.config(conn_max_age=250)
-    DATABASES['default'].update(db_from_env)
-
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -81,6 +74,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 LANGUAGE_CODE = 'ru-RU'
 TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
@@ -89,8 +83,13 @@ USE_TZ = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+ALLOWED_HOSTS = ['*']
+
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
+
+db_from_env = dj_database_url.config(conn_max_age=250)
+DATABASES['default'].update(db_from_env)
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
